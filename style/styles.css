@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 40px;
-    background-color: #e7d4f8;
+    background-color: #d9b8f5;
     color: #70569e;
     border: 5px slateblue;
     padding: 5px;
@@ -15,7 +15,7 @@ h1 {
     border-color:#70569e
     
 }
-.flower {
+.course{
     font-style:italic;
 }
 

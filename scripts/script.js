@@ -10,7 +10,7 @@ function setTheme(mode) {
         document.getElementById("settings").innerHTML = "Current Setting: Light Mode";
     } 
     else {
-        document.getElementById("mainPage").style.backgroundColor = "#f3f0f4";
+        document.getElementById("mainPage").style.backgroundColor = "#d9b8f5";
         document.getElementById("mainPage").style.color = "#70569e";
         document.getElementById("settings").innerHTML = "Current Setting: Default Mode";
     }
