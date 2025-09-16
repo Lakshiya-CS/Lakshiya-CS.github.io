@@ -1,0 +1,36 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: bisque;
+  padding: 16px;
+  max-width: 600px;
+}
+
+h1 {
+    color:darkslateblue;
+}
+
+p {
+  color: #333;
+}
+
+input {
+  margin-top: 6px;
+  padding: 6px;
+}
+
+button {
+  margin-top: 6px;
+  padding: 6px;
+}
+
+#output {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+img {
+  margin-top: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
