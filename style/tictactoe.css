@@ -14,7 +14,13 @@ td {
 }
 
 
-#reset { margin-top: 12px; padding: 8px 14px; }
-.reset-btn { margin-top: 12px; padding: 8px 14px; }
+#reset {
+    margin-top: 12px; padding: 8px 14px; 
+}
+.reset-btn { 
+    margin-top: 12px; padding: 8px 14px; 
+}
 
-#status { margin-top: 12px; font-weight: bold; }
+#status { 
+    margin-top: 12px; font-weight: bold; 
+}

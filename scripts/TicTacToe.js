@@ -63,7 +63,7 @@ function checkWin() {
     const b3 = document.getElementById('b3').innerHTML;
     const c3 = document.getElementById('c3').innerHTML;
 
-    // X wins (8 explicit checks)
+    // X wins 
     if (a1 == b1 && b1 == c1 && a1 == 'X') { show('X wins!'); return; } 
     if (a2 == b2 && b2 == c2 && a2 == 'X') { show('X wins!'); return; } 
     if (a3 == b3 && b3 == c3 && a3 == 'X') { show('X wins!'); return; } 
@@ -73,7 +73,7 @@ function checkWin() {
     if (a1 == b2 && b2 == c3 && a1 == 'X') { show('X wins!'); return; }
     if (c1 == b2 && b2 == a3 && c1 == 'X') { show('X wins!'); return; }
 
-    // O wins (same 8)
+    // O wins 
     if (a1 == b1 && b1 == c1 && a1 == 'O') { show('O wins!'); return; } 
     if (a2 == b2 && b2 == c2 && a2 == 'O') { show('O wins!'); return; } 
     if (a3 == b3 && b3 == c3 && a3 == 'O') { show('O wins!'); return; } 
