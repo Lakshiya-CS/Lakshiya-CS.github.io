@@ -22,6 +22,7 @@ function addValue() {
 document.getElementById("removeButton").onclick = removeValue;  
 
 function removeValue(){
+    
   let v = valueInput.value.trim();
   if (v === "" || isNaN(v)) {
     alert("Invalid entry.");
@@ -39,9 +40,9 @@ function removeValue(){
 };
 
 function show() {
-  datasetDisplay.innerHTML = dataset.length ? dataset.join(", ") : "—";
+  datasetDisplay.innerHTML = dataset.length ? dataset.join(", ") : " ";
   if (dataset.length === 0) {
-    meanDisplay.innerHTML = "Mean: —";
+    meanDisplay.innerHTML = "Mean: ";
   } else {
     let sum = 0;
     for (let i = 0; i < dataset.length; i++) {
