@@ -1,0 +1,113 @@
+<html>
+<head>
+  <title>DOM Puzzle</title>
+  <style>
+    /* NOTE: DO NOT modify this stylesheet */
+    #puzzle {
+      width: 500px;
+      height: 500px;
+      border: 5px solid black;
+    }
+    button {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <!-- NOTE: Do not modify the body or div -->
+  <div id="puzzle"></div>
+
+  <script>
+    // All puzzle code must be implemented here
+    const puzzle = document.getElementById("puzzle");
+
+    const heading = document.createElement("h2");
+    heading.textContent = "DOM Puzzle";
+    document.body.insertBefore(heading, puzzle);
+
+    const wrapper = document.createElement("div");
+    wrapper.style.width = "500px";
+    wrapper.style.height = "500px";
+    wrapper.style.border = "5px solid black";
+    wrapper.style.display = "grid";
+    wrapper.style.gridTemplateColumns = "250px 250px";
+    wrapper.style.gridTemplateRows = "250px 250px";
+    puzzle.appendChild(wrapper);
+
+    const topLeft = document.createElement("div");
+    topLeft.style.display = "grid";
+    topLeft.style.gridTemplateColumns = "125px 125px";
+    topLeft.style.gridTemplateRows = "125px 125px";
+    topLeft.style.backgroundColor = "#7338A0";
+    wrapper.appendChild(topLeft);
+
+    const colors = ["#9455F4", "#4A2B74", "#594492", "#854DDC"];
+    const letters = ["A", "B", "C", "D"];
+    const abcdButtons = [];
+
+    for (let i = 0; i < 4; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = letters[i];
+      btn.style.backgroundColor = colors[i];
+      btn.style.color = "white";
+      btn.style.fontSize = "16px";
+      btn.style.width = "125px";
+      btn.style.height = "125px";
+      topLeft.appendChild(btn);
+      abcdButtons.push(btn);
+    }
+
+    const topRight = document.createElement("div");
+    topRight.style.backgroundColor = "#7338A0";
+    wrapper.appendChild(topRight);
+ 
+    const bottomLeft = document.createElement("div");
+    bottomLeft.style.backgroundColor = "#7338A0";
+    wrapper.appendChild(bottomLeft);
+
+    const bottomRight = document.createElement("div");
+    bottomRight.style.display = "grid";
+    bottomRight.style.gridTemplateColumns = "repeat(10, 25px)";
+    bottomRight.style.gridTemplateRows = "repeat(10, 25px)";
+    bottomRight.style.backgroundColor = "#7338A0";
+    wrapper.appendChild(bottomRight);
+
+    const smallButtons = [];
+    for (let i = 0; i < 100; i++) {
+      const sbtn = document.createElement("button");
+      sbtn.style.width = "25px";
+      sbtn.style.height = "25px";
+      sbtn.style.backgroundColor = "#B594F9";
+      sbtn.style.border = "1px solid #1E052B";
+      bottomRight.appendChild(sbtn);
+      smallButtons.push(sbtn);
+    }
+
+    wrapper.addEventListener("mouseenter", function() {
+      wrapper.style.border = "5px solid orange";
+    });
+    wrapper.addEventListener("mouseleave", function() {
+      wrapper.style.border = "5px solid black";
+    });
+
+    const allButtons = abcdButtons.concat(smallButtons);
+    for (let i = 0; i < allButtons.length; i++) {
+      allButtons[i].addEventListener("click", function() {
+     
+        for (let j = 0; j < abcdButtons.length; j++) {
+          abcdButtons[j].style.backgroundColor = colors[j];
+        }
+        for (let j = 0; j < smallButtons.length; j++) {
+          smallButtons[j].style.backgroundColor = "#B594F9";
+        }
+
+        allButtons[i].style.backgroundColor = "#4A2574";
+        if (i > 0) allButtons[i - 1].style.backgroundColor = "#FF9E00";
+        if (i < allButtons.length - 1) allButtons[i + 1].style.backgroundColor = "#FF9E00";
+      });
+    }
+  </script>
+
+  <a href="index.html">Lakshiya's Portfolio</a>
+</body>
+</html>
