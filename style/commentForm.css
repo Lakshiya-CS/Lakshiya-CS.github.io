@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #d5f8f7;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  border-radius: 10px;
+  padding: 20px;
+}
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+small {
+  color: red;
+}
+
+button {
+  margin-top: 15px;
+  background-color: #0078D7;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+#result {
+  text-align: center;
+  font-weight: bold;
+}
