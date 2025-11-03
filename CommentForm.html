@@ -15,7 +15,7 @@
     <input id="name" type="text" name="name" required pattern="[A-Za-z\s]+" title="Letters and spaces only."><br><br>
 
     <label for="phone">Phone:</label>
-    <input id="phone" type="tel" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"><br><br>
+    <input id="phone" type="tel" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" title="123-456-7890"><br><br>
 
     <label for="email">Email:</label>
     <input id="email" type="email" name="email" required><br><br>
@@ -51,11 +51,19 @@
       if (missing.length === 0) message.textContent = "Strong password";
     });
 
-    // Username Validation
+    // Username Validation 
     document.getElementById("username").addEventListener("input", function() {
       let val = this.value;
-      if (!/^[A-Za-z0-9_]+$/.test(val)) {
-        alert("Username can only have letters, numbers, and underscores.");
+      let message = document.getElementById("usernameMessage");
+
+      if (val === "") {
+        message.textContent = "Username must contain only letters, numbers, or underscores. Example: user_123";
+      } 
+      else if (/^[A-Za-z0-9_]+$/.test(val)) {
+        message.textContent = "Valid username format.";
+      } 
+      else {
+        message.textContent = "Error: Invalid username. Only letters, numbers, or underscores allowed. Example: user_123";
       }
     });
 
@@ -72,9 +80,8 @@
 
     // Form Submission
     document.getElementById("commentForm").addEventListener("submit", function(event) {
-      // Check HTML validity
       if (!this.checkValidity()) {
-        alert("Please correct the errors before submitting.");
+        document.getElementById("result").textContent = "Please correct errors before submitting.";
         event.preventDefault();
         return;
       }
@@ -87,7 +94,8 @@
       let username = sanitize(document.getElementById("username").value.trim());
       let password = sanitize(document.getElementById("password").value.trim());
 
-      alert("Form submitted successfully!\nData sanitized.");
+      document.getElementById("result").textContent = "Form submitted successfully! Data sanitized.";
+      event.preventDefault();
     });
   </script>
 
