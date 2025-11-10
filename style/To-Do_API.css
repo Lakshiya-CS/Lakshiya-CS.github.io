@@ -1,0 +1,47 @@
+body {
+  font-family:'Times New Roman', Times, serif;
+  background-color: #f9a8a8;
+}
+
+body.light {
+  background-color: white;
+  color: black;
+}
+body.dark {
+  background-color: black;
+  color: white;
+}
+
+h1 {
+    color: rgb(38, 80, 44);
+}
+
+form {
+  margin-bottom: 15px;
+}
+
+#taskInput {
+  padding: 5px;
+  width: 200px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: 280px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+li {
+  background-color: #f5c2c2;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+body.dark li {
+  background-color: #333333;
+}
+
+li button {
+  padding: 3px 8px;
+}
