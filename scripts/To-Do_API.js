@@ -54,12 +54,12 @@ function updateCountDisplay() {
 function updateTaskList() {
   const list = document.getElementById("taskList");
   list.innerHTML = "";
-  tasks.forEach((taskText, index) => {
+  tasks.forEach(function(taskText, index) {
     const li = document.createElement("li");
     li.textContent = taskText;
     const delBtn = document.createElement("button");
     delBtn.textContent = "Remove";
-    delBtn.addEventListener("click", () => {
+    delBtn.addEventListener("click", function() {
       tasks.splice(index, 1);
       saveTasks();
       updateTaskList();
@@ -70,18 +70,16 @@ function updateTaskList() {
 }
 
 function initializeData() {
-  return new Promise((resolve, reject) => {
-    try {
-      const theme = getCookie("theme") || "light";
-      applyTheme(theme);
-      tasks = loadTasks();
-      updateTaskList();
-      updateCountDisplay();
-      resolve("Initialization successful");
-    } catch {
-      reject("Initialization failed");
-    }
-  });
+  try {
+    const theme = getCookie("theme") || "light";
+    applyTheme(theme);
+    tasks = loadTasks();
+    updateTaskList();
+    updateCountDisplay();
+    console.log("Initialization successful");
+  } catch (error) {
+    console.log("Initialization failed:", error);
+  }
 }
 
 function bindEvents() {
@@ -106,27 +104,14 @@ function bindEvents() {
   }
 }
 
-function updateDisplay(message) {
-  console.log(message);
-}
 
-window.onload = function () {
-  const promise = new Promise((resolve, reject) => {
-    initializeData()
-      .then(() => resolve("Data loaded successfully"))
-      .catch(() => reject("Failed to initialize"));
-  });
-  promise
-    .then(
-      (value) => {
-        updateDisplay(value);
-        bindEvents();
-      },
-      (error) => {
-        updateDisplay(error);
-      }
-    )
-    .finally(() => {
-      console.log("Setup complete. Ready for user interaction.");
-    });
+
+window.onload = function() {
+  try {
+    initializeData();
+    bindEvents();
+    console.log("Setup complete. Ready for user interaction.");
+  } catch (error) {
+    console.log("Error during setup:", error);
+  }
 };
