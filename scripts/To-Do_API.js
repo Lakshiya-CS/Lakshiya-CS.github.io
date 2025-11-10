@@ -8,8 +8,14 @@ function setCookie(name, value, days) {
 }
 
 function getCookie(name) {
-  const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
-  return match ? match[2] : null;
+  const cookies = document.cookie.split(';');
+  for (let i = 0; i < cookies.length; i++) {
+    let c = cookies[i].trim();
+    if (c.indexOf(name + "=") === 0) {
+      return c.substring(name.length + 1);
+    }
+  }
+  return null;
 }
 
 function applyTheme(theme) {
