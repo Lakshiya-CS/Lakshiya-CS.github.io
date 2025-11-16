@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Collection Class</title>
+    <style>
+        body{
+            background-color: rgb(101, 115, 77);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        #searchBox {
+            padding: 6px;
+            width: 200px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 6px 10px;
+            margin-left: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Book Database</h1>
+
+    <input type="text" id="searchBox" placeholder="Search books...">
+    <button onclick="runQuery()">Search</button>
+    <button onclick="resetQuery()">Reset</button>
+    
+    <div id="media-container"></div>
+    <script src="scripts/CollectionClass.js"></script>
+</body>
+</html>
